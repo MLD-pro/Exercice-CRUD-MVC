@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Exercice CRUD MVC</title>
+		</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.php">Accueil</a> </li>
+                    <li>
+                        <a href="index.php?route=list_user">Liste des utilisateurs</a>
+                    </li>
+					<li>
+						<a href="index.php?route=show_user">Voir un utilisateur</a> </li>
+					<li>
+						<a href="index.php?route=create_user">Créer un utilisateur</a>
+					</li>
+					<li>
+						<a href="index.php?route=update_user">Mettre à jour un utilisateur</a> </li>
+					</ul>
+			</nav>
+		</header>
+		
+		<main>
+		<?php
+
+		if ($route === "list_user") { 
+		    require "users/list.phtml"; 
+
+		} else if ($route === "create_user") {
+		    require "users/create.phtml"; 
+
+		} else if ($route === "update_user") {
+		    require "users/update.phtml"; 
+
+		} else if ($route === "list_user") {
+		    require "users/list.phtml"; 
+		}
+		
+		?>
+		</main>
+
+		</body>
+</html>
