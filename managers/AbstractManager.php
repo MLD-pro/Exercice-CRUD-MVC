@@ -7,7 +7,7 @@ class AbstractManager {
                 
             $host = "db.3wa.io";
             $port = "3306";
-            $dbname = "morganledez_pooj1";
+            $dbname = "morganledez_crud_mvc";
             $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
         
             $user = "morganledez";
@@ -20,6 +20,5 @@ class AbstractManager {
         );
     }
 }
-
 
 ?>
