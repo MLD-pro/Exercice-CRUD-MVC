@@ -8,18 +8,20 @@ class UserManager extends AbstractManager{
 
     public function findAll(): array{
         $users = $this->db->query('SELECT * FROM users');
-        $users = $query->fetchAll(PDO::FETCH_ASSOC);
-        $results = $query->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach($users as $data){
-            $user = new User();
-            $user->setId($data['id']);
-            $user->setEmail($data['email']);
-            $user->setFirstname($data['first_name']);
-            $user->setLastname($data['last_name']);
-            $users[] = $user;
+        $users = $users->fetchAll(PDO::FETCH_ASSOC);
+        
+            $usersData = [];
+    
+            foreach($users as $data){
+                $user = new User();
+                $user->setId($data['id']);
+                $user->setEmail($data['email']);
+                $user->setFirstname($data['first_name']);
+                $user->setLastname($data['last_name']);
+                
+            $usersData[] = $user;
         }
-        return $users;
+        return $usersData;
     }
 
     public function findOne(int $id){
@@ -28,9 +30,9 @@ class UserManager extends AbstractManager{
         $parameters = ['id' => $id];
         
         $query->execute($parameters);
-        $user = $query->fetch(PDO::FETCH_ASSOC);
+        $data = $query->fetch(PDO::FETCH_ASSOC);
 
-        if($data){ 
+        if ($data){
             $userOne = new User();
             $userOne->setId($data['id']);
             $userOne->setEmail($data['email']);
