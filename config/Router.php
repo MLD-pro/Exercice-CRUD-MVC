@@ -1,6 +1,5 @@
 <?php 
 
-require_once __DIR__ . '/../controllers/UserControllers.php';
 
 class Router {
      public function __construct() {
@@ -11,43 +10,43 @@ class Router {
         $controller = new UserController();
         
         if (!isset($get["route"])) {
-               $controller->home();
+               //$controller->home();
         }
         
         if (isset($get["route"])) {
     
             if ($get["route"] === "show_user") {
                         
-                $controller->show();
+                //$controller->show();
         
         
             } elseif ($get["route"] === "create_user") {
                         
-                $controller->create();
+                //$controller->create();
         
         
             } elseif ($get["route"] === "check_create_user") {
                       
-                $controller->checkCreate();
+                //$controller->checkCreate();
         
         
             } elseif ($get["route"] === "update_user") {
                         
-                $controller->update();
+                //$controller->update();
         
         
             } elseif ($get["route"] === "check_update_user") {
                        
-                $controller->checkUpdate();
+                //$controller->checkUpdate();
         
         
             } elseif ($get["route"] === "delete_user") {
                      
-                $controller->delete();
+                //$controller->delete();
         
             } else {
                        
-                $controller->list();
+                //$controller->list();
             }
         }
     }
